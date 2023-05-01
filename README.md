@@ -4,7 +4,7 @@ With this application we can clasify our Diabetes Desease,
 the flow is simple, there are 2 users role, patient and admin. Patient can only consultate they symtoms once and must register new account before, to know the result Patient have to ask the administration-man(cashier/nurse/doctor or whatever), they can see profile information page too. Admin's have the capababilities to see list of user profile information and able to delete them, see the result(desease) for Patient symtoms, and adding or remove symtoms.
 
 **NB**: `the application is for education only, you should check-up in hospital for valid result.`
-
+        `There's still undone page(it might).`
 ## Symtoms Desease
 Here is the rules to get Desease classified,
 
