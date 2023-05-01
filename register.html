@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/w3.css">
+		<link rel="stylesheet" href="/w3-theme-black.css">
+		
+		
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register</h1>
+			<form action="register.php" method="post" id="register" autocomplete="off">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" onchange="cek_username(this.value)" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" onchange="cek_pass(this.value)" required>
+
+     				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="email" required>
+				<select class="me-select w3-text-red w3-large" name="option" required>
+					<option value="" disabled selected>pilih gender</option>
+					<option value="Laki-laki">Laki-laki</option>
+					<option value="Perempuan">Perempuan</option>
+				</select>
+				<input type="submit" value="Register">
+			</form>
+			<center>
+				<div>
+					<p><a class="w3-text-purple w3-btn w3-hover-purple" href="index.php">batal ?</a>
+				      	<button class="w3-btn w3-black w3-text-purple w3-hover-purple" onclick="document.getElementById('id01').style.display='block'">Rule !</button></p>
+    				</div>
+			</center>
+		</div>
+			<!-- Modal -->
+			<div id="id01" class="w3-modal">
+    			   <div class="w3-modal-content w3-card-4 w3-animate-top">
+      			      <header class="w3-container w3-theme-d5"> 
+        		        <span onclick="document.getElementById('id01').style.display='none'"
+        			class="w3-button w3-display-topright">×</span>
+        			<h4>Please fill the registration form!</h4>
+        			<h5>Requirements :</h5>
+      			      </header>
+      			      <div class="w3-padding">
+        			 <p>Username character must be at least [A-Za-z0-9]</p>
+        			 <p>Password must be between 8 and 20 characters long!</p>
+      			      </div>
+      			      <footer class="w3-container w3-theme-d5">
+        			<p>Have a nice day!</p>
+      			      </footer>
+    			   </div>
+			</div>
+		<script>
+		
+		function cek_username(val) {
+			pattern = /\s/;
+			if (pattern.test(val)==true) {
+				alert("do not use any space");
+				document.getElementById("register").reset();
+			}
+			if (val.length < 8) {
+				alert("username characters at least 8 characters long");
+				document.getElementById("register").reset();
+			}
+		}
+		
+		function cek_pass(val) {
+			if (val.length > 20 || val.length < 8) {
+				alert("Password must be between 8 and 20 characters long!");
+			}
+		}
+		
+		</script>
+			
+	</body>
+</html>
